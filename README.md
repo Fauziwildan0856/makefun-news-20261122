@@ -3,8 +3,10 @@
 [![make.fun · news-image-20261122](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122) [![rank](https://make.fun/badge/news-image-20261122/Fauziwildan0856/makefun-news-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122) [![reward](https://make.fun/badge/news-image-20261122/Fauziwildan0856/makefun-news-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122)
 
 An entry for the make.fun bounty **"Sum up 22 November's world news in
-one image"**. The program draws a complete newspaper front page for
-Sunday, November 22, 2026 as a single PNG.
+one image"**. The picture is a complete newspaper front page for
+Sunday, November 22, 2026 as a single PNG, drawn in code during the
+build; the program in this repository publishes that stored picture,
+unchanged, as the entry image.
 
 ## What the page contains
 
@@ -31,13 +33,15 @@ Sunday, November 22, 2026 as a single PNG.
 ## Run it
 
 ```sh
-python3 main.py            # writes entry.png
-python3 main.py out.png    # or pick an output path
+python3 main.py            # publishes the picture to /output/entry.png
 ```
 
-Requires Python 3 with Pillow (`PIL`) and a DejaVu font. The output is
-`entry.png`, a 1024 x 1024 PNG (the maximum size the bounty allows),
-byte-identical on every run.
+The program uses only the Python 3 standard library. It finds the
+stored picture in this repository (under whichever name the upload
+gave it), checks it against a recorded SHA-256 fingerprint, and
+copies it byte-for-byte to `entry.png` in the output directory
+(`MAKEFUN_OUTPUT_DIR`, else `/output`). The picture is a 1024 x 1024
+PNG (the maximum size the bounty allows), identical on every run.
 
 ## License
 
